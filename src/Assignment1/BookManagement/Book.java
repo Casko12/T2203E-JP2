@@ -1,27 +1,50 @@
 package Assignment1.BookManagement;
 
 public class Book {
-    Integer bookID;
-    String bookName;
+    public Integer id;
+    public String name;
+    public String author;
+    public Integer qty;
 
-    public Book(Integer bookID, String bookName) {
-        this.bookID = bookID;
-        this.bookName = bookName;
+    public Book() {
     }
 
-    public Integer getBookID() {
-        return bookID;
+    public Book(Integer id, String name, String author, Integer qty) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.qty = qty;
     }
 
-    public void setBookID(Integer bookID) {
-        this.bookID = bookID;
+    public Integer getId() {
+        return id;
     }
 
-    public String getBookName() {
-        return bookName;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public Integer getQty() {
+        return qty;
+    }
+
+    public void setQty(Integer qty) {
+        this.qty = qty;
     }
 }

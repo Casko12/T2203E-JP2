@@ -19,7 +19,7 @@ public class Controller implements Initializable {
     public static ObservableList<Book> list = FXCollections.observableArrayList();
     public static Book editItem;
 
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize (URL location, ResourceBundle resources) {
         tv1.setItems(list);
     }
     public void backtoHome(ActionEvent actionEvent) throws Exception{
