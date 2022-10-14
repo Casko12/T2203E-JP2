@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:controller="Assignment1.student.list.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tbStudents" layoutX="54.0" layoutY="57.0" prefHeight="313.0" prefWidth="491.0">
+        <columns>
+          <TableColumn fx:id="stID" prefWidth="64.0" text="ID" />
+          <TableColumn fx:id="stName" prefWidth="189.0" text="Name" />
+            <TableColumn fx:id="stEmail" prefWidth="123.0" text="Email" />
+            <TableColumn fx:id="stPhone" prefWidth="114.0" text="Telephone" />
+        </columns>
+      </TableView>
+      <Text layoutX="249.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student List" textAlignment="CENTER" wrappingWidth="101.8828125" />
+      <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" text="&lt;&lt;&lt;Back to Home" />
+      <Button layoutX="540.0" layoutY="15.0" mnemonicParsing="false" text="Edit" />
+      <Button layoutX="478.0" layoutY="15.0" mnemonicParsing="false" text="Add" />
+   </children>
+</Pane>
