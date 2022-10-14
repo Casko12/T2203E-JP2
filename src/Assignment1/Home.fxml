@@ -8,7 +8,7 @@
 <Pane fx:controller="Assignment1.HomeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button onAction="#goToBookList" layoutX="14.0" layoutY="34.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Book Management" />
-      <Button onAction="#goToMemberList" layoutX="227.0" layoutY="34.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Member Management" />
+      <Button onAction="#goToMemberList" layoutX="227.0" layoutY="34.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Student Management" />
       <Button onAction="#goToBorrowList" layoutX="438.0" layoutY="34.0" mnemonicParsing="false" text="Book Borrowed List" />
    </children>
 </Pane>
