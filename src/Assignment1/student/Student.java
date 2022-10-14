@@ -3,17 +3,18 @@ package Assignment1.student;
 public class Student {
     public Integer id;
     public String name;
-    public String telephone;
     public String email;
+    public String phone;
+
 
     public Student() {
     }
 
-    public Student(Integer id, String name, String telephone, String email) {
+    public Student(Integer id, String name, String email, String phone) {
         this.id = id;
         this.name = name;
-        this.telephone = telephone;
         this.email = email;
+        this.phone = phone;
     }
 
     public Integer getId() {
@@ -32,19 +33,19 @@ public class Student {
         this.name = name;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
