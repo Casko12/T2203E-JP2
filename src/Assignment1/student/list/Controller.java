@@ -56,7 +56,6 @@ public class Controller implements Initializable {
             tbStudents.setItems(ls);
         }
     }
-
 }
 
 
