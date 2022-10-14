@@ -1,6 +1,5 @@
 package Assignment1.student.list;
 
-import Assignment1.BookManagement.Book;
 import Assignment1.student.Student;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,7 +25,7 @@ public class Controller implements Initializable {
     public final static String connectionString ="jdbc:mysql://localhost:3306/t2203e";
     public final static String user ="root";
     public final static String pwd ="";
-    public static ObservableList<Book> list = FXCollections.observableArrayList();
+    public static ObservableList<Student> list = FXCollections.observableArrayList();
 
     @Override
     public void initialize (URL location, ResourceBundle resources) {
