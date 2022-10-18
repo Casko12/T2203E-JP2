@@ -18,7 +18,7 @@ public class HomeController {
     public void goToMemberList(ActionEvent actionEvent) throws Exception{
         Parent listPage = FXMLLoader.load(getClass().getResource("student/list/StudentList.fxml"));
         Scene listScene = new Scene(listPage,800,600);
-        Main.rootStage.setTitle("Member List");
+        Main.rootStage.setTitle("Student List");
         Main.rootStage.setScene(listScene);
     }
     public void goToBorrowList(ActionEvent actionEvent) throws Exception {
