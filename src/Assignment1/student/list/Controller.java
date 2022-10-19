@@ -67,5 +67,11 @@ public class Controller implements Initializable {
         Main.rootStage.setTitle("Home");
         Main.rootStage.setScene(listScene);
     }
+    public void addStudent(ActionEvent actionEvent) throws Exception {
+        Parent listPage = FXMLLoader.load(getClass().getResource("../form/FormStudent.fxml"));
+        Scene listScene = new Scene(listPage, 800, 600);
+        Main.rootStage.setTitle("Add Student");
+        Main.rootStage.setScene(listScene);
+    }
 }
 

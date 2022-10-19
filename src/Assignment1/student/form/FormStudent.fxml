@@ -8,12 +8,11 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Assignment1.student.form.Controller">
    <children>
       <Text layoutX="267.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Student" />
-      <TextField layoutX="113.0" layoutY="95.0" promptText="Student ID" />
-      <TextField layoutX="113.0" layoutY="148.0" promptText="Student Name" />
-      <Button layoutX="401.0" layoutY="326.0" mnemonicParsing="false" text="Submit" />
-      <Button layoutX="48.0" layoutY="20.0" mnemonicParsing="false" text="&lt;&lt;&lt;Back to List" />
-      <Text fill="#d70202" layoutX="113.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error!" visible="false" />
-      <TextField layoutX="113.0" layoutY="200.0" promptText="Email" />
-      <TextField layoutX="113.0" layoutY="255.0" promptText="Phone number" />
+      <TextField fx:id="txtStName" layoutX="111.0" layoutY="107.0" promptText="Student Name" />
+      <Button onAction="#submit" layoutX="264.0" layoutY="291.0" mnemonicParsing="false" text="Submit" />
+      <Button onAction="#backToList" layoutX="48.0" layoutY="20.0" mnemonicParsing="false" text="&lt;&lt;&lt;Back to List" />
+      <Text fill="#d70202" layoutX="111.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error!" visible="false" />
+      <TextField fx:id="txtStEmail" layoutX="111.0" layoutY="162.0" promptText="Email" />
+      <TextField fx:id="txtStPhone" layoutX="111.0" layoutY="213.0" promptText="Phone number" />
    </children>
 </Pane>
