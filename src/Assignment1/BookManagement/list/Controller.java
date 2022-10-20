@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,6 +24,7 @@ public class Controller implements Initializable {
     public TableColumn<Book, String> tdName;
     public TableColumn<Book, String> tdAuthor;
     public TableColumn<Book, Integer> tdQty;
+    public TableColumn<Book, Button> tdEdit;
     public static ObservableList<Book> list = FXCollections.observableArrayList();
 
     @Override
@@ -51,4 +53,5 @@ public class Controller implements Initializable {
         Main.rootStage.setTitle("Add Book");
         Main.rootStage.setScene(listScene);
     }
+
 }

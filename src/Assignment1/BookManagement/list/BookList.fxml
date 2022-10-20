@@ -9,16 +9,15 @@
    <children>
       <TableView fx:id="tbBooks" layoutX="14.0" layoutY="57.0" prefHeight="313.0" prefWidth="571.0">
         <columns>
-          <TableColumn fx:id="tdId"  prefWidth="73.0" text="Book ID" />
+          <TableColumn fx:id="tdId" prefWidth="73.0" text="Book ID" />
           <TableColumn fx:id="tdName" prefWidth="218.0" text="Book Name" />
             <TableColumn fx:id="tdAuthor" minWidth="0.0" prefWidth="85.0" text="Author" />
             <TableColumn fx:id="tdQty" minWidth="0.0" prefWidth="108.0" text="Qty Remain" />
-            <TableColumn minWidth="0.0" prefWidth="86.0" text="Action" />
+            <TableColumn fx:id="tdEdit" minWidth="0.0" prefWidth="86.0" text="Action" />
         </columns>
       </TableView>
       <Text layoutX="249.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book List" textAlignment="CENTER" wrappingWidth="101.8828125" />
-      <Button onAction="#backToHome" layoutX="14.0" layoutY="15.0" mnemonicParsing="false"  text="&lt;&lt;&lt;Back to Home" />
-      <Button layoutX="540.0" layoutY="15.0" mnemonicParsing="false"  text="Edit" />
-      <Button onAction="#addBook" layoutX="478.0" layoutY="15.0" mnemonicParsing="false"  text="Add" />
+      <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#backToHome" text="&lt;&lt;&lt;Back to Home" />
+      <Button layoutX="538.0" layoutY="15.0" mnemonicParsing="false" onAction="#addBook" text="Add" />
    </children>
 </Pane>
