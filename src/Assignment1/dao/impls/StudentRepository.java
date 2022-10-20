@@ -32,16 +32,53 @@ public class StudentRepository implements StudentInterface {
 
     @Override
     public boolean create(Student student) {
-        return false;
+        try{
+            String sql_txt = "insert into students(name,email,phone) " +
+                    "values(?,?,?)";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList<>();
+            arr.add(student.getName());
+            arr.add(student.getEmail());
+            arr.add(student.getPhone());
+
+            if (conn.execute(sql_txt, arr)) {
+            }    return true;
+        }catch (Exception e){
+        }
+            return false;
     }
 
     @Override
     public boolean update(Student student) {
+        try {
+            String sql_txt = "update students set name=?, email=?,phone=? where id=?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(student.getName());
+            arr.add(student.getEmail());
+            arr.add(student.getPhone());
+            arr.add(student.getId());
+            if(conn.execute(sql_txt,arr)){
+                return true;
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         return false;
     }
 
     @Override
     public boolean delete(Student student) {
+        try {
+            String sql_txt = "delete from students where id=?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(student.getId());
+            if(conn.execute(sql_txt,arr)){
+                return true;
+            }
+        }catch (Exception e){
+        }
         return false;
     }
 }

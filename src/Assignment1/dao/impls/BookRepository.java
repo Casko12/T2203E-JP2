@@ -32,16 +32,17 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public boolean create(Book book) {
-        String sql_txt = "insert into books(name,author,qty) " +
-                "values(?,?,?)";
-        Connector conn = Connector.getInstance();
-        ArrayList arr = new ArrayList<>();
-        arr.add(book.getName());
-        arr.add(book.getAuthor());
-        arr.add(book.getQty());
-
-        if (conn.execute(sql_txt, arr)) {
-            return true;
+        try {
+            String sql_txt = "insert into books(name,author,qty) values(?,?,?)";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(book.getName());
+            arr.add(book.getAuthor());
+            arr.add(book.getQty());
+            if(conn.execute(sql_txt,arr)){
+                return true;
+            }
+        }catch (Exception e){
         }
         return false;
     }

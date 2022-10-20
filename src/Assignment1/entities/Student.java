@@ -1,10 +1,13 @@
 package Assignment1.entities;
 
+import javafx.scene.control.Button;
+
 public class Student {
     public Integer id;
     public String name;
     public String email;
     public String phone;
+    public Button edit;
 
 
     public Student() {
@@ -48,6 +51,11 @@ public class Student {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public Button getEdit() {
+        return edit;
+    }
+
     @Override
     public String toString() {
         return getName();
