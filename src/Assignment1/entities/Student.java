@@ -1,4 +1,4 @@
-package Assignment1.student;
+package Assignment1.entities;
 
 public class Student {
     public Integer id;

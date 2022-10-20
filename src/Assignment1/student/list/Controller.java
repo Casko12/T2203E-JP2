@@ -1,7 +1,7 @@
 package Assignment1.student.list;
 
 import Assignment1.Main;
-import Assignment1.student.Student;
+import Assignment1.entities.Student;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,7 +11,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import Assignment1.student.Student;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
