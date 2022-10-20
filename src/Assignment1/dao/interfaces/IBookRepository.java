@@ -9,5 +9,6 @@ public interface IBookRepository {
     boolean create(Book book);
     boolean update(Book book);
     boolean delete(Book book);
+    boolean findOne(Book book);
 
 }

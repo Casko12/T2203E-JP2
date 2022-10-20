@@ -48,20 +48,55 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public boolean update(Book book) {
-        String sql = "update books set name = ?, author = ? qty = ? where id = ?";
-        Connector conn = Connector.getInstance();
-        ArrayList arr = new ArrayList<>();
-        arr.add(book.getName());
-        arr.add(book.getAuthor());
-        arr.add(book.getQty());
-        if (conn.execute(sql, arr)) {
-            return true;
+        try{
+            String sql = "update books set name = ?, author = ? qty = ? where id = ?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList<>();
+            arr.add(book.getName());
+            arr.add(book.getAuthor());
+            arr.add(book.getQty());
+            if (conn.execute(sql, arr)) {
+                return true;
+            }
+        }catch (Exception e){
         }
         return false;
     }
 
     @Override
     public boolean delete(Book book) {
-        return false;
+        try {
+            String sql = "delete from books where id =?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList<>();
+            arr.add(book.getName());
+            arr.add(book.getAuthor());
+            arr.add(book.getQty());
+            if (conn.execute(sql, arr)) {
+                return true;
+            }
+        }catch (Exception e){
+        }
+            return false;
+    }
+
+    @Override
+    public Book findOne(Integer id) {
+        try {
+            String sql_txt = "delete * from books where id =?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList<>();
+            arr.add(id);
+            ResultSet rs = conn.executeQuery(sql_txt, arr);
+            while (rs.next()) {
+                int Id = rs.getInt("id");
+                String name = rs.getString("name");
+                String author = rs.getString("author");
+                int qty = rs.getInt("qty");
+                return new Book(Id, name, author, qty);
+            }
+        }catch (Exception e){
+        }
+        return null;
     }
 }
