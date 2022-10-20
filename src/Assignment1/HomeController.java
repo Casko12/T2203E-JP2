@@ -22,7 +22,7 @@ public class HomeController {
         Main.rootStage.setScene(listScene);
     }
     public void goToBorrowList(ActionEvent actionEvent) throws Exception {
-        Parent listPage = FXMLLoader.load(getClass().getResource("BookBorrow/list/BookBorrowList.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("BookRent/list/BookRentList.fxml"));
         Scene listScene = new Scene(listPage, 800, 600);
         Main.rootStage.setTitle("Book Borrow List");
         Main.rootStage.setScene(listScene);

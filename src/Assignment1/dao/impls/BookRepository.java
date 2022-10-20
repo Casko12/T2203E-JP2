@@ -1,6 +1,6 @@
 package Assignment1.dao.impls;
 
-import Assignment1.BookManagement.Book;
+import Assignment1.entities.Book;
 import Assignment1.dao.interfaces.IBookRepository;
 import Assignment1.helper.Connector;
 

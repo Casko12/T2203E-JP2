@@ -1,7 +1,6 @@
 package Assignment1.BookManagement.list;
 
 import Assignment1.dao.impls.BookRepository;
-import Assignment1.helper.Connector;
 import Assignment1.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,9 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import Assignment1.BookManagement.Book;
+import Assignment1.entities.Book;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 public class Controller implements Initializable {
     public TableView<Book> tbBooks;
@@ -33,7 +31,7 @@ public class Controller implements Initializable {
         tdName.setCellValueFactory(new PropertyValueFactory<Book, String>("name"));
         tdAuthor.setCellValueFactory(new PropertyValueFactory<Book, String>("author"));
         tdQty.setCellValueFactory(new PropertyValueFactory<Book, Integer>("qty"));
-
+        tdEdit.setCellValueFactory(new PropertyValueFactory<Book,Button>("edit"));
         ObservableList<Book> ls = FXCollections.observableArrayList();
         // lay data tu database
         BookRepository rp = new BookRepository();

@@ -1,16 +1,13 @@
 package Assignment1.BookManagement.form;
 
-import Assignment1.BookManagement.Book;
+import Assignment1.entities.Book;
 import Assignment1.dao.impls.BookRepository;
-import Assignment1.helper.Connector;
 import Assignment1.Main;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
-import java.util.ArrayList;
 
 
 public class Controller {

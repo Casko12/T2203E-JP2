@@ -1,12 +1,13 @@
-package Assignment1.BookManagement;
+package Assignment1.entities;
 
 import Assignment1.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import Assignment1.BookManagement.edit.Controller;
 
-import java.awt.*;
+
 
 public class Book {
     public Integer id;
@@ -26,7 +27,7 @@ public class Book {
         this.edit = new Button("Edit");
         this.edit.setOnAction((event) -> {
             try{
-
+                Controller.editedBook = this;
                 Parent edit = FXMLLoader.load(getClass().getResource("../BookManagement/edit/FormBookEdit.fxml"));
                 Main.rootStage.setScene( new Scene(edit,800,600));
             }catch (Exception e){

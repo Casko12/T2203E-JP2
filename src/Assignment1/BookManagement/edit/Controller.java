@@ -1,9 +1,8 @@
 package Assignment1.BookManagement.edit;
 
-import Assignment1.BookManagement.Book;
+import Assignment1.entities.Book;
 import Assignment1.Main;
 import Assignment1.dao.impls.BookRepository;
-import Assignment1.dao.interfaces.IBookRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,18 +28,18 @@ public class Controller implements Initializable {
         }
     }
     public void submit(ActionEvent actionEvent) {
-        try{
-        String name = txtBookName.getText();
-        String author = txtBookAuthor.getText();
-        Integer qty = Integer.parseInt(txtBookQty.getText());
-        editedBook.setName(name);
-        editedBook.setAuthor(author);
-        editedBook.setQty(qty);
-        BookRepository rp = new BookRepository();
-            if (rp.update(editedBook)){
-            backToList(null);
-            }else{
-            System.out.println("Error!");
+        try {
+            String name = txtBookName.getText();
+            String author = txtBookAuthor.getText();
+            Integer qty = Integer.parseInt(txtBookQty.getText());
+            editedBook.setName(name);
+            editedBook.setAuthor(author);
+            editedBook.setQty(qty);
+            BookRepository rp = new BookRepository();
+            if(rp.update(editedBook)){
+                backToList(null);
+            }else {
+                System.out.println("Error1");
             }
         }catch (Exception e){
             System.out.println(e.getMessage());
