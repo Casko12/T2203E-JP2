@@ -9,6 +9,6 @@
    <children>
       <Button onAction="#goToBookList" layoutX="14.0" layoutY="34.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Book Management" />
       <Button onAction="#goToMemberList" layoutX="227.0" layoutY="34.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Student Management" />
-      <Button onAction="#goToBorrowList" layoutX="438.0" layoutY="34.0" mnemonicParsing="false" text="Book Borrowed List" />
+      <Button onAction="#goToRentList" layoutX="438.0" layoutY="34.0" mnemonicParsing="false" text="Book Borrowed List" />
    </children>
 </Pane>

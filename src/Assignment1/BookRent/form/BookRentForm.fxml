@@ -5,12 +5,12 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Assignment1.BookRent.form.Controller">
    <children>
       <Text layoutX="266.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Rent" />
-      <ComboBox layoutX="132.0" layoutY="99.0" prefHeight="31.0" prefWidth="336.0" promptText="Select Book" />
-      <ComboBox layoutX="132.0" layoutY="162.0" prefHeight="31.0" prefWidth="336.0" promptText="Select Student" />
-      <DatePicker layoutX="132.0" layoutY="229.0" prefHeight="31.0" prefWidth="336.0" promptText="Select Date" />
+      <ComboBox fx:id="cbBook" layoutX="132.0" layoutY="99.0" prefHeight="31.0" prefWidth="336.0" promptText="Select Book" />
+      <ComboBox fx:id="cbStudent" layoutX="132.0" layoutY="162.0" prefHeight="31.0" prefWidth="336.0" promptText="Select Student" />
+      <DatePicker fx:id="dpExpire" layoutX="132.0" layoutY="229.0" prefHeight="31.0" prefWidth="336.0" promptText="Select Date" />
+      <Button onAction="#Submit" layoutX="403.0" layoutY="291.0" mnemonicParsing="false" text="Submit" />
    </children>
 </Pane>

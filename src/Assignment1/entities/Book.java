@@ -71,4 +71,9 @@ public class Book {
     public Button getEdit() {
         return edit;
     }
+
+    @Override
+    public String toString() {
+        return "Book{}";
+    }
 }
