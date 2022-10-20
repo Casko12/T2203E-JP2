@@ -1,5 +1,7 @@
 package Assignment1.BookManagement.form;
 
+import Assignment1.BookManagement.Book;
+import Assignment1.dao.impls.BookRepository;
 import Assignment1.helper.Connector;
 import Assignment1.Main;
 import javafx.scene.control.TextField;
@@ -21,15 +23,9 @@ public class Controller {
             String name = txtBookName.getText();
             String author = txtBookAuthor.getText();
             Integer qty = Integer.parseInt(txtBookQty.getText());
-            String sql_txt = "insert into books(name,author,qty) " +
-                    "values(?,?,?)";
-            Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
-            arr.add(name);
-            arr.add(author);
-            arr.add(qty);
-
-            if (conn.execute(sql_txt, arr)) {
+            Book book = new Book( null, name, author, qty);
+            BookRepository rp = new BookRepository();
+            if (rp.create(book)){
                 backToList(null);
             } else {
                 System.out.println("Error!");

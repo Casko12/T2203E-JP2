@@ -1,5 +1,6 @@
 package Assignment1.BookManagement.list;
 
+import Assignment1.dao.impls.BookRepository;
 import Assignment1.helper.Connector;
 import Assignment1.Main;
 import javafx.collections.FXCollections;
@@ -33,23 +34,9 @@ public class Controller implements Initializable {
 
         ObservableList<Book> ls = FXCollections.observableArrayList();
         // lay data tu database
-        try{
-            String sql_txt = "select * from books";
-            Connector conn = Connector.getInstance();
-            ResultSet rs = conn.query(sql_txt);
-            while (rs.next()){
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                String author = rs.getString("author");
-                int qty = rs.getInt("qty");
-                Book b = new Book(id, name, author, qty);
-                ls.add(b);
-            }
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }finally {
-            tbBooks.setItems(ls);
-        }
+        BookRepository rp = new BookRepository();
+        ls.addAll(rp.all());
+        tbBooks.setItems(ls);
     }
     public void backToHome(ActionEvent actionEvent) throws Exception {
         Parent listPage = FXMLLoader.load(getClass().getResource("/Assignment1/Home.fxml"));
