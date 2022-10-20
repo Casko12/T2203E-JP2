@@ -31,7 +31,6 @@ public class Controller implements Initializable {
         ObservableList <Book> ls= FXCollections.observableArrayList();
         ls.addAll(rp.all());
         cbBook.setItems(ls);
-
     }
 
     public void Submit(ActionEvent actionEvent) {
