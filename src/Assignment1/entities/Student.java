@@ -29,6 +29,7 @@ public class Student {
                 Controller.editedStudent = this;
                 Parent edit = FXMLLoader.load(getClass().getResource("../student/edit/FormStudentEdit.fxml"));
                 Main.rootStage.setScene( new Scene(edit,800,600));
+                Main.rootStage.setTitle("Edit Student");
             }catch (Exception e){
 
             }

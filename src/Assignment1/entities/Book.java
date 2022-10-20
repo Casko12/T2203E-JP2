@@ -30,6 +30,7 @@ public class Book {
                 Controller.editedBook = this;
                 Parent edit = FXMLLoader.load(getClass().getResource("../BookManagement/edit/FormBookEdit.fxml"));
                 Main.rootStage.setScene( new Scene(edit,800,600));
+                Main.rootStage.setTitle("Edit Book");
             }catch (Exception e){
 
             }
