@@ -7,7 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class Controller implements Initializable {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 
     public void backToHome(ActionEvent actionEvent) {
 //        Parent listPage = FXMLLoader.load(getClass().getResource("/Assignment1/Home.fxml"));

@@ -14,6 +14,6 @@
       <Button layoutX="48.0" layoutY="20.0" mnemonicParsing="false" onAction="#backToList" text="&lt;&lt;&lt;Back to List" />
       <Text fill="#d70202" layoutX="113.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error!" visible="false" wrappingWidth="43.2841796875" />
       <TextField fx:id="txtBookQty" layoutX="111.0" layoutY="210.0" promptText="Qty" />
-      <Button layoutX="397.0" layoutY="309.0" mnemonicParsing="false" text="Delete Book" textFill="#f20000" />
+      <Button onAction="#delete" layoutX="397.0" layoutY="309.0" mnemonicParsing="false" text="Delete Book" textFill="#f20000" />
    </children>
 </Pane>

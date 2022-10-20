@@ -9,8 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -52,4 +55,23 @@ public class Controller implements Initializable {
         Main.rootStage.setScene(listScene);
     }
 
+    public void delete(ActionEvent actionEvent) {
+        try{
+            Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete Book?");
+            alert.setHeaderText("Are you sure delete book: "+editedBook.getName());
+            Optional<ButtonType> option = alert.showAndWait();
+
+            if(option.get() == ButtonType.OK){
+                BookRepository rp = new BookRepository();
+                if(rp.delete(editedBook)){
+                    backToList(null);
+                }else {
+                    System.out.println("Error");
+                }
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }
