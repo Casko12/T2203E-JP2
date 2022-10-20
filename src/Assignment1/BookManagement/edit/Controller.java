@@ -39,7 +39,7 @@ public class Controller implements Initializable {
             if(rp.update(editedBook)){
                 backToList(null);
             }else {
-                System.out.println("Error1");
+                System.out.println("Error!");
             }
         }catch (Exception e){
             System.out.println(e.getMessage());
