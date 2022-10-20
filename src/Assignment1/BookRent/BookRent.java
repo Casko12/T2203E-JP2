@@ -1,4 +1,4 @@
 package Assignment1.BookRent;
 
-public class BookBorrow {
+public class BookRent {
 }

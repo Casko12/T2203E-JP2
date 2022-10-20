@@ -1,5 +1,10 @@
 package Assignment1.entities;
 
+import Assignment1.student.edit.Controller;
+import Assignment1.Main;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 public class Student {
@@ -18,6 +23,16 @@ public class Student {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.edit = new Button("Edit");
+        this.edit.setOnAction((event) -> {
+            try{
+                Controller.editedStudent = this;
+                Parent edit = FXMLLoader.load(getClass().getResource("../student/edit/FormBookEdit.fxml"));
+                Main.rootStage.setScene( new Scene(edit,800,600));
+            }catch (Exception e){
+
+            }
+        });
     }
 
     public Integer getId() {

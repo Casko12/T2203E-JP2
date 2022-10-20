@@ -1,6 +1,7 @@
 package Assignment1.student.list;
 
 import Assignment1.Main;
+import Assignment1.dao.impls.StudentRepository;
 import Assignment1.entities.Student;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,9 +28,8 @@ public class Controller implements Initializable {
     public TableColumn<Student, String> stName;
     public TableColumn<Student, String> stEmail;
     public TableColumn<Student, String> stPhone;
-    public final static String connectionString = "jdbc:mysql://localhost:3306/t2203e";
-    public final static String user = "root";
-    public final static String pwd = "";
+    public TableColumn<Student, Button> stEdit;
+
     public static ObservableList<Student> list = FXCollections.observableArrayList();
 
     @Override
@@ -37,27 +38,11 @@ public class Controller implements Initializable {
         stName.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
         stEmail.setCellValueFactory(new PropertyValueFactory<Student, String>("email"));
         stPhone.setCellValueFactory(new PropertyValueFactory<Student, String>("phone"));
-
+        stEdit.setCellValueFactory(new PropertyValueFactory<Student,Button>("edit"));
         ObservableList<Student> ls = FXCollections.observableArrayList();
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(connectionString, user, pwd);
-            Statement statement = conn.createStatement();
-            String sql_txt = "select * from students";
-            ResultSet rs = statement.executeQuery(sql_txt);
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                String email = rs.getString("email");
-                String phone = rs.getString("phone");
-                Student s = new Student(id, name, email, phone);
-                ls.add(s);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            tbStudents.setItems(ls);
-        }
+        StudentRepository rp = new StudentRepository();
+        ls.addAll(rp.all());
+        tbStudents.setItems(ls);
     }
 
     public void backToHome(ActionEvent actionEvent) throws Exception {

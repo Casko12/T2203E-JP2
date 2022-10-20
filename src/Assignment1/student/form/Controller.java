@@ -1,14 +1,14 @@
 package Assignment1.student.form;
 
 import Assignment1.Main;
+import Assignment1.entities.Student;
+import Assignment1.dao.impls.StudentRepository;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import Assignment1.helper.Connector;
 
-import java.util.ArrayList;
 
 
 public class Controller {
@@ -21,14 +21,9 @@ public class Controller {
             String name = txtStName.getText();
             String email = txtStEmail.getText();
             String phone = txtStPhone.getText();
-            String sql_txt = "insert into students(name,email,phone) " +
-                    "values(?,?,?)";
-            Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
-            arr.add(name);
-            arr.add(email);
-            arr.add(phone);
-            if (conn.execute(sql_txt, arr)) {
+            Student student = new Student(null, name, email, phone);
+            StudentRepository rp = new StudentRepository();
+            if (rp.create(student)) {
                 backToList(null);
             } else {
                 System.out.println("Error!");
