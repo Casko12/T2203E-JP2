@@ -48,6 +48,15 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public boolean update(Book book) {
+        String sql = "update books set name = ?, author = ? qty = ? where id = ?";
+        Connector conn = Connector.getInstance();
+        ArrayList arr = new ArrayList<>();
+        arr.add(book.getName());
+        arr.add(book.getAuthor());
+        arr.add(book.getQty());
+        if (conn.execute(sql, arr)) {
+            return true;
+        }
         return false;
     }
 
