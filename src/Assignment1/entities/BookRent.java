@@ -1,5 +1,10 @@
 package Assignment1.entities;
 
+import Assignment1.dao.impls.BookRepository;
+import Assignment1.dao.impls.StudentRepository;
+import Assignment1.enums.RepositoryType;
+import Assignment1.factory.RepositoryFactory;
+
 import java.util.Date;
 
 public class BookRent {
@@ -65,5 +70,11 @@ public class BookRent {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+    public Book book(){
+        return ((BookRepository) RepositoryFactory.createRepository(RepositoryType.BOOK)).findOne(this.getBookId());
+    }
+    public Student student(){
+        return ((StudentRepository) RepositoryFactory.createRepository(RepositoryType.STUDENT)).findOne(this.getStudentId());
     }
 }

@@ -1,13 +1,15 @@
 package Assignment1.dao.impls;
 
+import Assignment1.dao.interfaces.IRepository;
 import Assignment1.dao.interfaces.StudentInterface;
+import Assignment1.entities.Book;
 import Assignment1.entities.Student;
 import Assignment1.helper.Connector;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class StudentRepository implements StudentInterface {
+public class StudentRepository implements IRepository <Student> {
     @Override
     public ArrayList<Student> all() {
         ArrayList <Student> ls = new ArrayList<>();
@@ -79,5 +81,24 @@ public class StudentRepository implements StudentInterface {
         }catch (Exception e){
         }
         return false;
+    }
+    @Override
+    public Student findOne(Integer id) {
+        try {
+            String sql_txt = "select * from students where id=?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(id);
+            ResultSet rs = conn.executeQuery(sql_txt,arr);
+            while (rs.next()) {
+                int Id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String phone = rs.getString("phone");
+                return new Student(Id, name, email, phone);
+            }
+        }catch (Exception e){
+        }
+        return null;
     }
 }

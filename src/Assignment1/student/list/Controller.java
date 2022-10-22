@@ -3,6 +3,8 @@ package Assignment1.student.list;
 import Assignment1.Main;
 import Assignment1.dao.impls.StudentRepository;
 import Assignment1.entities.Student;
+import Assignment1.enums.RepositoryType;
+import Assignment1.factory.RepositoryFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,7 +38,7 @@ public class Controller implements Initializable {
         stPhone.setCellValueFactory(new PropertyValueFactory<Student, String>("phone"));
         stEdit.setCellValueFactory(new PropertyValueFactory<Student,Button>("edit"));
         ObservableList<Student> ls = FXCollections.observableArrayList();
-        StudentRepository rp = new StudentRepository();
+        StudentRepository rp = (StudentRepository) RepositoryFactory.createRepository(RepositoryType.STUDENT);
         ls.addAll(rp.all());
         tbStudents.setItems(ls);
     }

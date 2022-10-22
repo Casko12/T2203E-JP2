@@ -1,5 +1,5 @@
 package Assignment1.enums;
 
 public enum RepositoryType {
-    BOOK, BOOKRENT // hang so viet hoa
+    BOOK, BOOKRENT, STUDENT // hang so viet hoa
 }
