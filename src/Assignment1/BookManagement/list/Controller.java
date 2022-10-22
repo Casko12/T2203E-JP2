@@ -2,6 +2,8 @@ package Assignment1.BookManagement.list;
 
 import Assignment1.dao.impls.BookRepository;
 import Assignment1.Main;
+import Assignment1.enums.RepositoryType;
+import Assignment1.factory.RepositoryFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -34,7 +36,7 @@ public class Controller implements Initializable {
         tdEdit.setCellValueFactory(new PropertyValueFactory<Book,Button>("edit"));
         ObservableList<Book> ls = FXCollections.observableArrayList();
         // lay data tu database
-        BookRepository rp = new BookRepository();
+        BookRepository rp = (BookRepository)RepositoryFactory.createRepository(RepositoryType.BOOK);
         ls.addAll(rp.all());
         tbBooks.setItems(ls);
     }

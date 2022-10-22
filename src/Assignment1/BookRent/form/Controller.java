@@ -23,7 +23,7 @@ public class Controller implements Initializable {
 
     public ComboBox <Book> cbBook;
     public ComboBox <Student> cbStudent;
-    public DatePicker dpExpired;
+    public DatePicker dpExpire;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,7 +39,7 @@ public class Controller implements Initializable {
 
     public void Submit(ActionEvent actionEvent) {
         Book selectedBook = cbBook.getSelectionModel().getSelectedItem();
-        LocalDate dp = dpExpired.getValue();
+        LocalDate dp = dpExpire.getValue();
         System.out.println(selectedBook.getName());
         System.out.println(dp);
     }
