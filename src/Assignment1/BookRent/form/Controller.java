@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     public ComboBox <Book> cbBook;
-    public ComboBox <Book> cbStudent;
+    public ComboBox <Student> cbStudent;
     public DatePicker dpExpired;
 
     @Override
@@ -31,6 +31,10 @@ public class Controller implements Initializable {
         ObservableList <Book> ls= FXCollections.observableArrayList();
         ls.addAll(rp.all());
         cbBook.setItems(ls);
+        StudentRepository srp = new StudentRepository();
+        ObservableList <Student> sls = FXCollections.observableArrayList();
+        sls.addAll(srp.all());
+        cbStudent.setItems(sls);
     }
 
     public void Submit(ActionEvent actionEvent) {
