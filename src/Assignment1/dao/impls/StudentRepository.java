@@ -2,7 +2,6 @@ package Assignment1.dao.impls;
 
 import Assignment1.dao.interfaces.IRepository;
 import Assignment1.dao.interfaces.StudentInterface;
-import Assignment1.entities.Book;
 import Assignment1.entities.Student;
 import Assignment1.helper.Connector;
 

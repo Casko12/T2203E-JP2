@@ -12,15 +12,18 @@ public class BookRent {
     private Integer bookId;
     private Integer studentId;
     private Date rentDate;
-    private Date expireDate;
+    private Date expiredDate;
     private Integer status;
+    private String bookName;
+    private String studentName;
+    private String statusLabel;
 
-    public BookRent(Integer id, Integer bookId, Integer studentId, Date rentDate, Date expireDate, Integer status) {
+    public BookRent(Integer id, Integer bookId, Integer studentId, Date rentDate, Date expiredDate, Integer status) {
         this.id = id;
         this.bookId = bookId;
         this.studentId = studentId;
         this.rentDate = rentDate;
-        this.expireDate = expireDate;
+        this.expiredDate = expiredDate;
         this.status = status;
     }
 
@@ -56,12 +59,12 @@ public class BookRent {
         this.rentDate = rentDate;
     }
 
-    public Date getExpireDate() {
-        return expireDate;
+    public Date getExpiredDate() {
+        return expiredDate;
     }
 
-    public void setExpireDate(Date expireDate) {
-        this.expireDate = expireDate;
+    public void setExpiredDate(Date expiredDate) {
+        this.expiredDate = expiredDate;
     }
 
     public Integer getStatus() {
@@ -70,6 +73,24 @@ public class BookRent {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+    public String getBookName() {
+        return this.book().getName();
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+    public String getStudentName() {
+        return this.student().getName();
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getStatusLabel() {
+        return status==0?"Chưa trả":"Đã trả";
     }
     public Book book(){
         return ((BookRepository) RepositoryFactory.createRepository(RepositoryType.BOOK)).findOne(this.getBookId());

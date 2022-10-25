@@ -7,19 +7,19 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Assignment1.BookRent.list.Controller">
    <children>
-      <TableView layoutX="36.0" layoutY="57.0" prefHeight="313.0" prefWidth="528.0">
+      <TableView fx:id="tbRents" layoutX="36.0" layoutY="57.0" prefHeight="313.0" prefWidth="528.0">
         <columns>
-          <TableColumn prefWidth="95.0" text="Book Name" />
-            <TableColumn prefWidth="110.0" text="Student Rent" />
-            <TableColumn prefWidth="101.0" text="Borrowed Date" />
-            <TableColumn prefWidth="88.0" text="Returned Date" />
-            <TableColumn prefWidth="73.0" text="Status" />
-            <TableColumn prefWidth="60.0" text="Action" />
+          <TableColumn fx:id="tdId" prefWidth="51.0" text="Id" />
+            <TableColumn fx:id="tdBook" prefWidth="78.0" text="Book" />
+            <TableColumn fx:id="tdStudent" prefWidth="73.0" text="Student" />
+            <TableColumn fx:id="tdRentDate" text="Rent date" />
+            <TableColumn fx:id="tdExpiredDate" minWidth="0.0" prefWidth="106.0" text="Expire date" />
+            <TableColumn fx:id="tdStatus" prefWidth="70.0" text="Status" />
+            <TableColumn fx:id="tdAction" prefWidth="69.0" text="Action" />
         </columns>
       </TableView>
       <Text layoutX="228.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Borrow List" textAlignment="CENTER" wrappingWidth="143.69140625" />
       <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#backToHome" text="&lt;&lt;&lt;Back to Home" />
-      <Button layoutX="540.0" layoutY="15.0" mnemonicParsing="false" text="Edit" />
-      <Button layoutX="478.0" layoutY="15.0" mnemonicParsing="false" onAction="#addRent" text="Add" />
+      <Button layoutX="516.0" layoutY="15.0" mnemonicParsing="false" onAction="#addRent" text="Add" />
    </children>
 </Pane>
