@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="22.0" layoutY="65.0" prefHeight="321.0" prefWidth="555.0">
+        <columns>
+          <TableColumn prefWidth="141.0" text="Student ID" />
+          <TableColumn prefWidth="144.0" text="Student Name" />
+            <TableColumn prefWidth="102.0" text="Address" />
+            <TableColumn prefWidth="82.0" text="Phone" />
+            <TableColumn prefWidth="68.0" text="Edit" />
+        </columns>
+      </TableView>
+      <Text layoutX="240.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student List">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#2c228a" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Button layoutX="473.0" layoutY="21.0" mnemonicParsing="false" text="Add Student" />
+   </children>
+</Pane>

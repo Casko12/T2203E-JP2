@@ -3,7 +3,9 @@ package Assignment1.BookRent.form;
 import Assignment1.Main;
 import Assignment1.dao.impls.BookRepository;
 import Assignment1.dao.impls.StudentRepository;
+import Assignment1.dao.impls.BookRentRepository;
 import Assignment1.entities.Book;
+import Assignment1.entities.BookRent;
 import Assignment1.entities.Student;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,10 +40,20 @@ public class Controller implements Initializable {
     }
 
     public void Submit(ActionEvent actionEvent) {
-        Book selectedBook = cbBook.getSelectionModel().getSelectedItem();
-        LocalDate dp = dpExpire.getValue();
-        System.out.println(selectedBook.getName());
-        System.out.println(dp);
+//        try{
+//            Book selectedBook = cbBook.getSelectionModel().getSelectedItem();
+//            Student selectedStudent = cbStudent.getSelectionModel().getSelectedItem();
+//            LocalDate dp = dpExpire.getValue();
+//            BookRent bookRent = new BookRent(null, selectedBook.id, selectedStudent.id,dp ,null,null);
+//            BookRentRepository brp = new BookRentRepository();
+//            if (brp.create(bookRent)){
+//                backToList(null);
+//            } else {
+//                System.out.println("Error!");
+//            }
+//        }catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
     }
 
     public void backToList(ActionEvent actionEvent) throws Exception {
