@@ -1,4 +1,4 @@
 package Exam.enums;
 
-public class RepositoryType {
+public enum RepositoryType {
 }
