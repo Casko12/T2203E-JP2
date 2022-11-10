@@ -17,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.FileWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -36,7 +37,7 @@ public class Controller implements Initializable {
         tdAddress.setCellValueFactory(new PropertyValueFactory<Student, String>("address"));
         tdPhone.setCellValueFactory(new PropertyValueFactory<Student, String>("phone"));
         tdEdit.setCellValueFactory(new PropertyValueFactory<Student, Button>("edit"));
-        tbStudents.setItems(Controller.list);
+        tbStudents.setItems(Exam.student.add.Controller.listStudent);
 
     }
 
@@ -45,5 +46,21 @@ public class Controller implements Initializable {
         Scene listScene = new Scene(listPage, 800, 600);
         Main.rootStage.setTitle("Add Student");
         Main.rootStage.setScene(listScene);
+    }
+
+    public void save(ActionEvent actionEvent) {
+        try {
+            FileWriter fw = new FileWriter("students.txt");
+            fw.write(Exam.student.add.Controller.listStudent.toString());
+            fw.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        System.out.println("Export Successfully!");
+    }
+
+
+    public void exit(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }
