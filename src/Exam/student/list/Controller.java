@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -55,7 +56,10 @@ public class Controller implements Initializable {
             fw.close();
         } catch (Exception e) {
             System.out.println(e);
+
         }
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setHeaderText("Export Successfully!");
         System.out.println("Export Successfully!");
     }
 
