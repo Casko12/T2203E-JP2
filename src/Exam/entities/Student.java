@@ -23,16 +23,16 @@ public class Student {
         this.address = address;
         this.phone = phone;
         this.edit = new Button("Edit");
-        this.edit.setOnAction((event) -> {
-            try{
-                Controller.editedStudent = this;
-                Parent edit = FXMLLoader.load(getClass().getResource("../student/edit/EditStudent.fxml"));
-                Main.rootStage.setScene( new Scene(edit,800,600));
-                Main.rootStage.setTitle("Edit Book");
-            }catch (Exception e){
-
-            }
-        });
+//        this.edit.setOnAction((event) -> {
+//            try{
+//                Controller.editedStudent = this;
+//                Parent edit = FXMLLoader.load(getClass().getResource("../student/edit/EditStudent.fxml"));
+//                Main.rootStage.setScene( new Scene(edit,800,600));
+//                Main.rootStage.setTitle("Edit Book");
+//            }catch (Exception e){
+//
+//            }
+//        });
     }
 
     public String getId() {
