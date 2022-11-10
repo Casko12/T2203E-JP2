@@ -11,11 +11,11 @@
    <children>
       <TableView layoutX="22.0" layoutY="65.0" prefHeight="321.0" prefWidth="555.0">
         <columns>
-          <TableColumn prefWidth="141.0" text="Student ID" />
-          <TableColumn prefWidth="144.0" text="Student Name" />
-            <TableColumn prefWidth="102.0" text="Address" />
-            <TableColumn prefWidth="82.0" text="Phone" />
-            <TableColumn prefWidth="68.0" text="Edit" />
+          <TableColumn fx:id="tdId" prefWidth="141.0" text="Student ID" />
+          <TableColumn fx:id="tdName" prefWidth="144.0" text="Student Name" />
+            <TableColumn fx:id="tdAddress" prefWidth="102.0" text="Address" />
+            <TableColumn fx:id="tdPhone" prefWidth="82.0" text="Phone" />
+            <TableColumn fx:id="tdEdit" prefWidth="68.0" text="Edit" />
         </columns>
       </TableView>
       <Text layoutX="240.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student List">
@@ -31,6 +31,6 @@
             <Font size="23.0" />
          </font>
       </Text>
-      <Button layoutX="473.0" layoutY="21.0" mnemonicParsing="false" text="Add Student" />
+      <Button onAction="#addStudent" layoutX="473.0" layoutY="21.0" mnemonicParsing="false" text="Add Student" />
    </children>
 </Pane>
